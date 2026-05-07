@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Schäfer;Stephan;;;
+FN:Stephan Schäfer
+TITLE:Product Specialist
+EMAIL;TYPE=INTERNET:schaefer@identbase.de
+TEL;TYPE=WORK,VOICE:+49 5931 99 89 1356
+END:VCARD
