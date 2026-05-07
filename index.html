@@ -1,198 +1,239 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stephan Schäfer | IDENTBASE</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        body{
 
-            /* Farbverlauf ähnlich der Visitenkarte */
+            font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+            /* Farbverlauf wie auf der Karte */
             background:
                 linear-gradient(
                     180deg,
                     #d07a47 0%,
-                    #b08b3d 20%,
-                    #7ca33b 45%,
-                    #55b234 70%,
-                    #48a82f 100%
+                    #b08b3d 18%,
+                    #85a53f 42%,
+                    #63b133 70%,
+                    #4aa62f 100%
                 );
 
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            min-height:100vh;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            padding:20px;
         }
 
-        .card {
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(8px);
+        .card{
 
-            max-width: 560px;
-            width: 100%;
+            background:rgba(255,255,255,0.96);
 
-            padding: 42px 36px;
-            border-radius: 28px;
+            max-width:560px;
+            width:100%;
+
+            padding:42px 36px;
+
+            border-radius:28px;
 
             box-shadow:
                 0 25px 50px rgba(0,0,0,0.18);
 
-            text-align: center;
+            border-top:6px solid #67b631;
 
-            border-top: 6px solid #67b631;
+            text-align:center;
+
+            backdrop-filter: blur(8px);
         }
 
-        .logo-container {
-            margin-bottom: 30px;
+        /* LOGO BEREICH */
+        .logo-container{
 
-            background: #ffffff;
-            border-radius: 18px;
+            margin-bottom:30px;
 
-            padding: 24px;
+            /* gleicher Hintergrund wie Karte */
+            background:rgba(255,255,255,0.96);
 
-            min-height: 150px;
+            border-radius:20px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding:24px;
 
-            overflow: hidden;
+            min-height:150px;
 
-            border: 1px solid #eef1ee;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            overflow:hidden;
         }
 
-        .logo-container img {
+        .logo-container img{
 
-            /* DEUTLICH kleiner */
-            transform: scale(1);
+            /* kleineres Logo */
+            max-width:72%;
+            max-height:110px;
 
-            max-width: 72%;
-            max-height: 120px;
+            width:auto;
+            height:auto;
 
-            width: auto;
-            height: auto;
+            object-fit:contain;
 
-            object-fit: contain;
-
-            display: block;
+            display:block;
         }
 
-        .name {
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: #111;
+        .name{
 
-            margin-bottom: 6px;
+            font-size:2.6rem;
+            font-weight:700;
 
-            letter-spacing: -1px;
+            color:#111;
+
+            letter-spacing:-1px;
+
+            margin-bottom:6px;
         }
 
-        .title {
-            font-size: 1.25rem;
-            color: #4f7f25;
+        .title{
 
-            font-weight: 500;
+            font-size:1.25rem;
 
-            margin-bottom: 8px;
+            color:#4f7f25;
+
+            font-weight:500;
+
+            margin-bottom:8px;
         }
 
-        .company {
-            font-size: 1.1rem;
-            color: #5b5b5b;
+        .company{
 
-            margin-bottom: 28px;
+            font-size:1.08rem;
 
-            padding-bottom: 18px;
+            color:#555;
 
-            border-bottom: 2px solid #e8ece8;
+            margin-bottom:28px;
+
+            padding-bottom:18px;
+
+            border-bottom:2px solid #ececec;
         }
 
-        .detail {
-            background: #f8faf8;
+        .detail{
 
-            border-radius: 18px;
+            background:#f7f7f7;
 
-            padding: 24px;
+            border-radius:20px;
 
-            text-align: left;
+            padding:24px;
 
-            margin-bottom: 30px;
+            text-align:left;
+
+            margin-bottom:30px;
         }
 
-        .detail-item {
-            display: flex;
-            align-items: flex-start;
+        .detail-item{
 
-            margin: 18px 0;
+            display:flex;
 
-            font-size: 1.08rem;
+            align-items:flex-start;
+
+            margin:18px 0;
+
+            font-size:1.08rem;
         }
 
-        .emoji {
-            font-size: 1.4rem;
+        .emoji{
 
-            width: 38px;
-            min-width: 38px;
+            font-size:1.4rem;
 
-            margin-right: 14px;
+            width:40px;
+            min-width:40px;
+
+            margin-right:14px;
         }
 
-        .text {
-            color: #222;
-            line-height: 1.5;
+        .text{
+
+            color:#222;
+
+            line-height:1.5;
         }
 
-        .label {
-            font-weight: 700;
-            color: #5a962f;
+        .label{
+
+            font-weight:700;
+
+            color:#5a962f;
         }
 
-        .email {
-            color: #4f7f25;
-            text-decoration: none;
-            font-weight: 600;
+        .email{
+
+            color:#4f7f25;
+
+            text-decoration:none;
+
+            font-weight:600;
         }
 
-        .email:hover {
-            text-decoration: underline;
+        .email:hover{
+            text-decoration:underline;
         }
 
-        .website {
-            margin-bottom: 28px;
+        /* WEBSITE BUTTON */
+        .website{
+            margin-bottom:28px;
         }
 
-        .website a {
-            text-decoration: none;
+        .website a{
 
-            color: #4f7f25;
+            text-decoration:none;
 
-            font-size: 1.25rem;
-            font-weight: 600;
+            color:#ffffff;
 
-            border-bottom: 2px solid #98c95f;
+            background:#67b631;
 
-            padding-bottom: 4px;
+            font-size:1.15rem;
+            font-weight:600;
 
-            transition: 0.2s;
+            padding:14px 28px;
+
+            border-radius:40px;
+
+            display:inline-block;
+
+            box-shadow:
+                0 8px 20px rgba(103,182,49,0.28);
+
+            transition:0.25s;
         }
 
-        .website a:hover {
-            border-bottom-color: #4f7f25;
+        .website a:hover{
+
+            background:#5aa52a;
+
+            transform:translateY(-2px);
+
+            box-shadow:
+                0 12px 24px rgba(103,182,49,0.35);
         }
 
-        .vcard-button {
-            display: inline-block;
+        /* VCARD BUTTON */
+        .vcard-button{
 
-            width: 100%;
+            display:inline-block;
+
+            width:100%;
 
             background:
                 linear-gradient(
@@ -201,72 +242,78 @@
                     #67b631
                 );
 
-            color: white;
+            color:white;
 
-            text-decoration: none;
+            text-decoration:none;
 
-            padding: 17px 30px;
+            padding:17px 30px;
 
-            border-radius: 50px;
+            border-radius:50px;
 
-            font-size: 1.15rem;
-            font-weight: 600;
+            font-size:1.15rem;
+            font-weight:600;
 
-            letter-spacing: 0.3px;
+            letter-spacing:0.3px;
 
             box-shadow:
                 0 10px 25px rgba(0,0,0,0.16);
 
-            transition: 0.25s;
+            transition:0.25s;
         }
 
-        .vcard-button:hover {
-            transform: translateY(-2px);
+        .vcard-button:hover{
+
+            transform:translateY(-2px);
 
             box-shadow:
                 0 14px 30px rgba(0,0,0,0.22);
         }
 
-        .hint {
-            margin-top: 15px;
+        .hint{
 
-            color: #777;
-            font-size: 0.92rem;
+            margin-top:15px;
+
+            color:#777;
+
+            font-size:0.92rem;
         }
 
-        .location {
-            margin-top: 20px;
+        .location{
 
-            color: #444;
+            margin-top:20px;
 
-            font-size: 0.95rem;
-            font-weight: 600;
+            color:#444;
+
+            font-size:0.95rem;
+
+            font-weight:600;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width:480px){
 
-            .card {
-                padding: 30px 20px;
+            .card{
+                padding:30px 20px;
             }
 
-            .name {
-                font-size: 2rem;
+            .name{
+                font-size:2rem;
             }
 
             .title,
-            .company {
-                font-size: 1rem;
+            .company{
+                font-size:1rem;
             }
 
-            .logo-container {
-                min-height: 130px;
+            .logo-container{
+                min-height:130px;
             }
 
-            .logo-container img {
-                max-width: 78%;
-                max-height: 90px;
+            .logo-container img{
+                max-width:80%;
+                max-height:90px;
             }
         }
+
     </style>
 </head>
 
@@ -274,9 +321,9 @@
 
     <div class="card">
 
+        <!-- LOGO -->
         <div class="logo-container">
 
-            <!-- Logo-Datei -->
             <img
                 src="identbase-logo.png"
                 alt="IDENTBASE"
@@ -287,7 +334,6 @@
                 "
             >
 
-            <!-- Fallback -->
             <div
                 id="fallback-logo"
 
@@ -304,33 +350,41 @@
 
         </div>
 
+        <!-- NAME -->
         <h1 class="name">
             Stephan Schäfer
         </h1>
 
+        <!-- POSITION -->
         <div class="title">
             Product Specialist RFID
         </div>
 
+        <!-- FIRMA -->
         <div class="company">
             IDENTBASE • a Levata company
         </div>
 
+        <!-- DETAILS -->
         <div class="detail">
 
             <div class="detail-item">
+
                 <span class="emoji">📞</span>
 
                 <span class="text">
                     <span class="label">Telefon:</span><br>
                     +49 5931 99 89 1356
                 </span>
+
             </div>
 
             <div class="detail-item">
+
                 <span class="emoji">✉️</span>
 
                 <span class="text">
+
                     <span class="label">E-Mail:</span><br>
 
                     <a
@@ -339,31 +393,41 @@
                     >
                         schaefer@identbase.de
                     </a>
+
                 </span>
+
             </div>
 
             <div class="detail-item">
+
                 <span class="emoji">📍</span>
 
                 <span class="text">
+
                     <span class="label">Adresse:</span><br>
 
                     Dieselstraße 26<br>
                     49716 Meppen, Germany
+
                 </span>
+
             </div>
 
         </div>
 
+        <!-- WEBSITE -->
         <div class="website">
+
             <a
                 href="https://www.identbase.de"
                 target="_blank"
             >
                 www.identbase.de
             </a>
+
         </div>
 
+        <!-- VCARD -->
         <a
             href="Stephan-Schaefer.vcf"
             class="vcard-button"
