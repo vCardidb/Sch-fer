@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephan Schäfer | Identbase</title>
+    <title>Stephan Schäfer | IDENTBASE</title>
+
     <style>
         * {
             margin: 0;
@@ -13,7 +14,18 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #b7e4c7 0%, #95d5b2 100%);
+
+            /* Farbverlauf ähnlich der Visitenkarte */
+            background:
+                linear-gradient(
+                    180deg,
+                    #d07a47 0%,
+                    #b08b3d 20%,
+                    #7ca33b 45%,
+                    #55b234 70%,
+                    #48a82f 100%
+                );
+
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -22,103 +34,132 @@
         }
 
         .card {
-            background: white;
-            max-width: 550px;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(8px);
+
+            max-width: 560px;
             width: 100%;
-            padding: 45px 40px;
-            border-radius: 24px;
-            box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.25);
+
+            padding: 42px 36px;
+            border-radius: 28px;
+
+            box-shadow:
+                0 25px 50px rgba(0,0,0,0.18);
+
             text-align: center;
-            border-top: 5px solid #52b788;
+
+            border-top: 6px solid #67b631;
         }
 
         .logo-container {
             margin-bottom: 30px;
-            padding: 20px;
-            background: #f1fff5;
-            border-radius: 16px;
-            min-height: 180px;
+
+            background: #ffffff;
+            border-radius: 18px;
+
+            padding: 24px;
+
+            min-height: 150px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             overflow: hidden;
+
+            border: 1px solid #eef1ee;
         }
 
         .logo-container img {
-            transform: scale(1.8);
-            max-width: 100%;
-            max-height: 100%;
+
+            /* DEUTLICH kleiner */
+            transform: scale(1);
+
+            max-width: 72%;
+            max-height: 120px;
+
             width: auto;
             height: auto;
-            display: inline-block;
+
             object-fit: contain;
+
+            display: block;
         }
 
         .name {
-            font-size: 2.5rem;
-            font-weight: 500;
-            color: #1b4332;
-            line-height: 1.2;
-            margin-bottom: 5px;
-            font-family: 'Georgia', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #111;
+
+            margin-bottom: 6px;
+
+            letter-spacing: -1px;
         }
 
         .title {
-            font-size: 1.2rem;
-            color: #40916c;
+            font-size: 1.25rem;
+            color: #4f7f25;
+
             font-weight: 500;
-            margin-bottom: 5px;
+
+            margin-bottom: 8px;
         }
 
         .company {
-            font-size: 1.2rem;
-            color: #52796f;
-            font-weight: 400;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #d8f3dc;
+            font-size: 1.1rem;
+            color: #5b5b5b;
+
+            margin-bottom: 28px;
+
+            padding-bottom: 18px;
+
+            border-bottom: 2px solid #e8ece8;
         }
 
         .detail {
-            margin: 30px 0;
+            background: #f8faf8;
+
+            border-radius: 18px;
+
+            padding: 24px;
+
             text-align: left;
-            background: #f1fff5;
-            padding: 25px;
-            border-radius: 16px;
+
+            margin-bottom: 30px;
         }
 
         .detail-item {
             display: flex;
             align-items: flex-start;
+
             margin: 18px 0;
-            font-size: 1.1rem;
+
+            font-size: 1.08rem;
         }
 
         .emoji {
-            font-size: 1.5rem;
-            margin-right: 18px;
-            min-width: 35px;
-            text-align: center;
-            color: #40916c;
+            font-size: 1.4rem;
+
+            width: 38px;
+            min-width: 38px;
+
+            margin-right: 14px;
         }
 
         .text {
-            color: #2d4739;
-            word-break: break-word;
-            line-height: 1.4;
+            color: #222;
+            line-height: 1.5;
         }
 
         .label {
-            font-weight: 600;
-            color: #40916c;
-            margin-right: 8px;
-            min-width: 50px;
+            font-weight: 700;
+            color: #5a962f;
         }
 
         .email {
-            color: #2d6a4f;
+            color: #4f7f25;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .email:hover {
@@ -126,65 +167,84 @@
         }
 
         .website {
-            text-align: center;
-            margin: 20px 0 30px;
+            margin-bottom: 28px;
         }
 
         .website a {
-            color: #2d6a4f;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1.3rem;
-            border-bottom: 2px solid #95d5b2;
+
+            color: #4f7f25;
+
+            font-size: 1.25rem;
+            font-weight: 600;
+
+            border-bottom: 2px solid #98c95f;
+
             padding-bottom: 4px;
+
+            transition: 0.2s;
         }
 
         .website a:hover {
-            border-bottom-color: #2d6a4f;
+            border-bottom-color: #4f7f25;
         }
 
         .vcard-button {
             display: inline-block;
-            background: #52b788;
-            color: white;
-            text-decoration: none;
-            padding: 16px 32px;
-            border-radius: 40px;
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin: 5px 0 15px;
-            box-shadow: 0 6px 14px rgba(82, 183, 136, 0.25);
-            transition: all 0.2s;
+
             width: 100%;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #cf7b49,
+                    #67b631
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 17px 30px;
+
+            border-radius: 50px;
+
+            font-size: 1.15rem;
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.16);
+
+            transition: 0.25s;
         }
 
         .vcard-button:hover {
-            background: #40916c;
-            box-shadow: 0 8px 18px rgba(82, 183, 136, 0.35);
             transform: translateY(-2px);
-        }
 
-        .vcard-button:active {
-            transform: translateY(0);
+            box-shadow:
+                0 14px 30px rgba(0,0,0,0.22);
         }
 
         .hint {
-            color: #6c8f7b;
-            font-size: 0.9rem;
             margin-top: 15px;
+
+            color: #777;
+            font-size: 0.92rem;
         }
 
         .location {
-            font-weight: 600;
-            color: #1b4332;
-            margin-top: 15px;
+            margin-top: 20px;
+
+            color: #444;
+
             font-size: 0.95rem;
+            font-weight: 600;
         }
 
         @media (max-width: 480px) {
+
             .card {
                 padding: 30px 20px;
             }
@@ -199,82 +259,127 @@
             }
 
             .logo-container {
-                min-height: 150px;
+                min-height: 130px;
+            }
+
+            .logo-container img {
+                max-width: 78%;
+                max-height: 90px;
             }
         }
     </style>
 </head>
 
 <body>
+
     <div class="card">
 
         <div class="logo-container">
-            <!-- Optional: Firmenlogo einsetzen -->
-            <img src="identbase-logo.png" alt="Identbase"
-                onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
+
+            <!-- Logo-Datei -->
+            <img
+                src="identbase-logo.png"
+                alt="IDENTBASE"
+
+                onerror="
+                    this.style.display='none';
+                    document.getElementById('fallback-logo').style.display='block';
+                "
+            >
 
             <!-- Fallback -->
-            <div id="fallback-logo"
-                style="display: none; font-size: 2.2rem; font-weight: 600; color: #2d6a4f; letter-spacing: 1px;">
+            <div
+                id="fallback-logo"
+
+                style="
+                    display:none;
+                    font-size:2.3rem;
+                    font-weight:700;
+                    color:#4f7f25;
+                    letter-spacing:1px;
+                "
+            >
                 IDENTBASE
             </div>
+
         </div>
 
-        <h1 class="name">Stephan Schäfer</h1>
-        <div class="title">Product Specialist</div>
-        <div class="company">Identbase GmbH</div>
+        <h1 class="name">
+            Stephan Schäfer
+        </h1>
+
+        <div class="title">
+            Product Specialist RFID
+        </div>
+
+        <div class="company">
+            IDENTBASE • a Levata company
+        </div>
 
         <div class="detail">
 
             <div class="detail-item">
                 <span class="emoji">📞</span>
+
                 <span class="text">
-                    <span class="label">Tel:</span>
+                    <span class="label">Telefon:</span><br>
                     +49 5931 99 89 1356
                 </span>
             </div>
 
             <div class="detail-item">
                 <span class="emoji">✉️</span>
+
                 <span class="text">
-                    <span class="label">Mail:</span>
-                    <a href="mailto:schaefer@identbase.de" class="email">
+                    <span class="label">E-Mail:</span><br>
+
+                    <a
+                        href="mailto:schaefer@identbase.de"
+                        class="email"
+                    >
                         schaefer@identbase.de
                     </a>
+                </span>
+            </div>
+
+            <div class="detail-item">
+                <span class="emoji">📍</span>
+
+                <span class="text">
+                    <span class="label">Adresse:</span><br>
+
+                    Dieselstraße 26<br>
+                    49716 Meppen, Germany
                 </span>
             </div>
 
         </div>
 
         <div class="website">
-            <a href="https://www.identbase.de" target="_blank">
+            <a
+                href="https://www.identbase.de"
+                target="_blank"
+            >
                 www.identbase.de
             </a>
         </div>
 
-        <a href="Stephan-Schaefer.vcf" class="vcard-button" rel="noopener noreferrer">
-            ⬇️ Kontakt speichern (vCard)
+        <a
+            href="Stephan-Schaefer.vcf"
+            class="vcard-button"
+        >
+            ⬇ Kontakt speichern (vCard)
         </a>
 
         <div class="hint">
-            Klicken Sie hier, um die Kontaktdaten auf Ihrem Gerät zu speichern
+            Kontakt direkt auf dem Smartphone speichern
         </div>
 
         <div class="location">
-            Product Specialist • Identbase
+            Product Specialist RFID • IDENTBASE
         </div>
 
     </div>
 
-    <script>
-        window.onload = function () {
-            var img = document.querySelector('.logo-container img');
-
-            if (img && img.complete && img.naturalHeight === 0) {
-                img.style.display = 'none';
-                document.getElementById('fallback-logo').style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
